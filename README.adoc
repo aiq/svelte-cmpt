@@ -1,0 +1,3 @@
+= svelte-cmpt
+
+Little tool that allows to generate Svelte components that can be easily include into legacy frontend code.

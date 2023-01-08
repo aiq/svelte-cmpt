@@ -1,0 +1,22 @@
+<script lang="ts">
+	export let value = 0;
+	export let onChange;
+
+	interface JustToHaveSomeTypeScript {
+	    entries: string[];
+    	name: string;
+  	}
+
+	function increment() {
+  		value += 1;
+		onChange(value);
+	}
+</script>
+
+<button on:click={increment}> increment </button>
+
+<style>
+	button {
+		background-color: #008CBA;
+	}
+</style>

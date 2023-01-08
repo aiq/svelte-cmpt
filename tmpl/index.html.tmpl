@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>{{.CmptName}} Svelte-Cmpt</title>
+
+    <link rel='stylesheet' href='{{.CmptName}}.css'>
+	<script src='{{.CmptName}}.js'></script>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div id="first-button"></div>
+        <div id="first-button-value">0</div>
+    </div>
+    <div style="display: flex;">
+        <div id="second-button"></div>
+        <div id="second-button-value">100</div>
+    </div>
+</body>
+
+<script>
+    const first = document.getElementById("first-button");
+    first.innerHTML = "";
+    const firstValue = document.getElementById("first-button-value")
+    new {{.CmptName}}({
+        target: first,
+        props: {
+            value: Number(firstValue.innerHTML),
+            onChange: function( value ){
+                firstValue.innerHTML = value
+            }
+        }
+    });
+
+    const second = document.getElementById("second-button");
+    second.innerHTML = "";
+    const secondValue = document.getElementById("second-button-value")
+    new {{.CmptName}}({
+        target: second,
+        props: {
+            value: Number(secondValue.innerHTML),
+            onChange: function( value ){
+                secondValue.innerHTML = value
+            }
+        }
+    });
+</script>
+
+</html>
